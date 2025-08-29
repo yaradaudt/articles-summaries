@@ -66,21 +66,11 @@ prompt_template_summary = PromptTemplate(
 # Creates the chain that joins the prompt and the LLM together
 chain = prompt_template_summary | llm
 
-# --- Lógica Principal ---
-if __name__ == "__main__":
-    article_url = "https://pt.wikipedia.org/wiki/Intelig%C3%AAncia_artificial"
 
-    print(f"Extraindo texto da URL: {article_url}")
-    extracted_text = extract_text_from_url(article_url)
-
+# --- Main Logics ---
+def generate_url_summary(url):
+    extracted_text = extract_text_from_url(url)
     if extracted_text:
-        print("Texto extraído com sucesso. Gerando resumo...")
-
-        try:
-            summary_generated = chain.invoke({"text": extracted_text})
-            print("\n" + "=" * 50)
-            print("RESUMO GERADO:")
-            print("=" * 50)
-            print(summary_generated)
-        except Exception as e:
-            print(f"Erro ao gerar resumo: {e}")
+        summary = chain.invoke({"text": extracted_text})
+        return summary
+    return None
