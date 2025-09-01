@@ -1,6 +1,6 @@
 # 📰 AI Article Summarizer
 
-An intelligent web application that uses Artificial Intelligence to generate concise and informative summaries of online articles. The project combines web scraping for content extraction and a local Large Language Model (LLM) for processing and generating summaries. Feel free to clone, fork, contribute or use it for learning. The "env" example file is in case you're not using a local LLM. 
+An intelligent web application that uses Artificial Intelligence to generate concise and informative summaries of online articles. The project combines web scraping for content extraction and a local Large Language Model (LLM) for processing and generating summaries. Feel free to clone, fork, contribute or use it for learning. The "env" example file is made for you to include your own User Agent. 
 
 ## 🎯 Purpose
 

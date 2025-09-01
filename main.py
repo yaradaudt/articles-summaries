@@ -1,7 +1,11 @@
+import os
+from dotenv import load_dotenv
 import requests
 from bs4 import BeautifulSoup
 from langchain_ollama import OllamaLLM
 from langchain.prompts import PromptTemplate
+
+load_dotenv()
 
 
 # Web scraping function
@@ -10,9 +14,7 @@ def extract_text_from_url(url):
     Extrai o texto principal de um artigo a partir de uma URL.
     """
 
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
-    }
+    headers = {"User-Agent": os.getenv("USER_AGENT")}
 
     try:
         # URL request
